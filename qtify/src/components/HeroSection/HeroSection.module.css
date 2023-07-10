@@ -1,0 +1,15 @@
+.mainContainer {
+  display: flex;
+  height: 270px;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroText {
+  color: var(--color-white);
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
