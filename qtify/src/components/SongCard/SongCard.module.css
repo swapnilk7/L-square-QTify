@@ -1,0 +1,40 @@
+.mainContainer {
+  height: 232px;
+  width: 160px;
+  margin: 0 40px;
+}
+.cardContainer {
+  display: flex;
+  width: 160px;
+  height: 205px;
+  flex-direction: column;
+}
+
+.cardImage {
+  width: 160px;
+  height: 170px;
+  border-radius: 10px 10px 0 0;
+}
+
+.cardText {
+  border-radius: 0 0 10px 10px;
+  background: var(--color-white);
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.cardFollows {
+  background: var(--color-black);
+  padding: 4px 8px;
+  border-radius: 10px;
+  margin: 0 6px;
+  font-size: 10px;
+  line-height: normal;
+}
+
+.cardTitle {
+  font-size: 14px;
+  line-height: normal;
+  margin-top: 10px;
+}
