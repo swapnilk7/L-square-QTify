@@ -2,30 +2,29 @@ import React from "react";
 import { Divider, IconButton, InputBase, Paper } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
+import styles from "./Search.module.css";
+
 const Search = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("helo");
+  };
   return (
-    <Paper
-      component="form"
-      sx={{
-        p: "2px 4px",
-        display: "flex",
-        alignItems: "center",
-        width: 568,
-        border: "2px solid black",
-        borderRadius: "8px",
-      }}
-    >
+    <Paper component="form" className={styles.mainForm} onSubmit={handleSubmit}>
       <InputBase
-        sx={{ ml: 1, flex: 1 }}
+        className={styles.searchInput}
+        required={true}
         placeholder="Search a album of your choice"
         inputProps={{ "aria-label": "search a album of your choice" }}
       />
 
-      <Divider
-        sx={{ height: 35, border: "1px solid black" }}
-        orientation="vertical"
-      />
-      <IconButton type="button" sx={{ color: "black" }} aria-label="search">
+      <Divider className={styles.divider} orientation="vertical" />
+      <IconButton
+        type="button"
+        className={styles.searchButton}
+        aria-label="search"
+        onClick={handleSubmit}
+      >
         <SearchIcon fontSize="medium" />
       </IconButton>
     </Paper>

@@ -2,6 +2,7 @@
   --color-primary: #34c94b;
   --color-black: #121212;
   --color-white: #fff;
+  --swiper-navigation-size: 25px !important;
 }
 
 *,
@@ -38,4 +39,36 @@ a:hover,
 a:focus,
 a:active {
   text-decoration: none;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  color: var(--color-white) !important;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+  background-color: var(--color-primary) !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: var(--color-primary) !important;
+  height: 40px !important;
+  width: 40px !important;
+  border-radius: 100%;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: var(--color-white);
+  font-weight: bold;
+}
+.swiper-button-next::after {
+  padding-left: 5px;
+}
+.swiper-button-prev::after {
+  padding-right: 5px;
+}
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  visibility: hidden;
 }

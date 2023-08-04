@@ -1,13 +1,28 @@
 import HeroSection from "./components/HeroSection/HeroSection";
 import Navbar from "./components/Navbar/Navbar";
-import SongCard from "./components/SongCard/SongCard";
+import Carousel from "./components/Carousel/Carousel";
+import Section from "./components/Section/Section";
+import { useEffect, useState } from "react";
+import { getTopAlbums } from "./api-store/getTopAlbums";
 
 function App() {
+  const [albums, setAlbums] = useState([]);
+
+  useEffect(() => {
+    const fetchAlbums = async () => {
+      const response = await getTopAlbums();
+      setAlbums(response);
+    };
+    fetchAlbums();
+    return () => {};
+  }, []);
+
   return (
     <>
       <Navbar />
       <HeroSection />
-      <SongCard />
+      <Carousel data={albums} />
+      <Section />
     </>
   );
 }

@@ -10,7 +10,7 @@ const HeroSection = () => {
         <p className={styles.heroText}>100 Thousand Songs, ad-free</p>
         <p className={styles.heroText}>Over thousands podcast episodes</p>
       </div>
-      <img src={Headphone} alt="headphone" width={212} height={212} />
+      <img src={Headphone} alt="headphones" width={212} height={212} />
     </div>
   );
 };

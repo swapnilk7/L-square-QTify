@@ -1,0 +1,13 @@
+.mainContainer {
+  padding: 24px 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapse {
+  color: var(--color-primary);
+  cursor: pointer;
+}
