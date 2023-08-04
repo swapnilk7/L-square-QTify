@@ -40,7 +40,9 @@ a:focus,
 a:active {
   text-decoration: none;
 }
-
+.css-1q2h7u5.Mui-selected {
+  color: var(--color-primary) !important;
+}
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
   color: var(--color-white) !important;
 }

@@ -1,7 +1,5 @@
 .mainContainer {
   height: 232px;
-  width: 160px;
-  margin: 0 40px;
   overflow: hidden;
   cursor: pointer;
 }

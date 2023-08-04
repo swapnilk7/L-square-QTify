@@ -1,26 +1,35 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+
+import Albums from "../Albums/Albums";
 
 import styles from "./Section.module.css";
-import Filters from "../Filters/Filters";
+import { getTopAlbums } from "../../api-store/getTopAlbums";
+import { getNewAlbums } from "../../api-store/getNewAlbums";
+import { getSongs } from "../../api-store/getSongs";
 
 const Section = (props) => {
-  const { type, filterSource, data, title } = props;
-  const [filters, setFilters] = useState({ key: "all", label: "All" });
-  const [collapseToggle, setCollapseToggle] = useState(true);
+  const [topAlbums, setTopAlbums] = useState([]);
+  const [newAlbums, setNewAlbums] = useState([]);
+  const [songs, setSongs] = useState([]);
 
-  const handleToggle = () => {
-    setCollapseToggle((prev) => !prev);
-  };
+  useEffect(() => {
+    const fetchAlbums = async () => {
+      const topAlbumList = await getTopAlbums();
+      setTopAlbums(topAlbumList);
+      const newAlbumList = await getNewAlbums();
+      setNewAlbums(newAlbumList);
+      const songsList = await getSongs();
+      setSongs(songsList);
+    };
+    fetchAlbums();
+    return () => {};
+  }, []);
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.header}>
-        <h4>Top Albums</h4>
-        <h4 onClick={handleToggle} className={styles.collapse}>
-          {collapseToggle ? "Show All" : "Collapse"}
-        </h4>
-      </div>
-      <Filters />
+      <Albums title="Top Albums" albums={topAlbums} />
+      <Albums title="New Albums" albums={newAlbums} />
+      <Albums title="Songs" albums={songs} />
     </div>
   );
 };

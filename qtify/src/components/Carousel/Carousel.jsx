@@ -8,7 +8,7 @@ import "swiper/css/scrollbar";
 
 import AlbumCard from "../AlbumCard/AlbumCard";
 
-const Carousel = ({ data = [] }) => {
+const Carousel = ({ title, data = [] }) => {
   return (
     <>
       <Swiper
@@ -16,16 +16,22 @@ const Carousel = ({ data = [] }) => {
         slidesPerView={2}
         navigation
         breakpoints={{
-          450: {
+          0: {
+            slidesPerView: 1,
+          },
+          375: {
+            slidesPerView: 2,
+          },
+          550: {
             slidesPerView: 3,
           },
-          650: {
+          715: {
             slidesPerView: 4,
           },
-          770: {
+          870: {
             slidesPerView: 5,
           },
-          1000: {
+          1024: {
             slidesPerView: 6,
           },
           1200: {
@@ -35,7 +41,7 @@ const Carousel = ({ data = [] }) => {
       >
         {data?.map((album) => (
           <SwiperSlide key={album.id}>
-            <AlbumCard album={album} />
+            <AlbumCard title={title} album={album} />
           </SwiperSlide>
         ))}
       </Swiper>
